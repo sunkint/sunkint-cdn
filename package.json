@@ -1,0 +1,16 @@
+{
+  "name": "sunkint-cdn",
+  "version": "0.0.1",
+  "description": "A tool for upload assets to xzwhome's qiniu-cdn",
+  "main": "index.js",
+  "repository": "https://github.com/sunkint/sunkint-cdn.git",
+  "author": "sunkint <sunkint@yeah.net>",
+  "license": "MIT",
+  "bin": "./index.js",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "chalk": "^3.0.0",
+    "node-qiniu": "^6.2.0",
+    "yargs": "^15.0.2"
+  }
+}
