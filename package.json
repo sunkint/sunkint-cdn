@@ -1,6 +1,6 @@
 {
   "name": "sunkint-cdn",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A tool for upload assets to xzwhome's qiniu-cdn",
   "main": "index.js",
   "repository": "https://github.com/sunkint/sunkint-cdn.git",
