@@ -1,5 +1,10 @@
 #!/usr/bin/env node
-const yargs = require('yargs');
+const yargs = require('yargs').option('r', {
+  alias: 'random',
+  default: false,
+  describe: 'Use random file names',
+  type: 'boolean'
+});
 const fs = require('fs');
 const path = require('path');
 const chalk = require('chalk');
@@ -7,6 +12,8 @@ const Upload = require('./lib/Upload');
 
 const files = yargs.argv._;
 const fileList = [];
+
+const useRandomName = yargs.argv.random;
 
 files.forEach(file => {
   const filePath = path.join(process.cwd(), file);
@@ -31,7 +38,10 @@ fileList.forEach(({ filePath }) => {
 // 空行
 console.log('');
 
-const upload = new Upload();
+const upload = new Upload({
+  random: useRandomName
+});
+
 upload
   .uploadFiles(fileList)
   .then(() => {
