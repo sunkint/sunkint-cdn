@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 const yargs = require('yargs').option('r', {
   alias: 'random',
-  default: false,
+  default: true,
   describe: 'Use random file names',
   type: 'boolean'
 });
@@ -16,7 +16,7 @@ const fileList = [];
 const useRandomName = yargs.argv.random;
 
 files.forEach(file => {
-  const filePath = path.join(process.cwd(), file);
+  const filePath = path.resolve(process.cwd(), file);
   if (fs.existsSync(filePath)) {
     fileList.push({
       fileName: path.basename(file),
