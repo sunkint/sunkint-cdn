@@ -8,9 +8,9 @@
   "license": "MIT",
   "bin": "./index.js",
   "dependencies": {
-    "axios": "^0.19.2",
-    "chalk": "^3.0.0",
+    "axios": "^0.21.1",
+    "chalk": "^4.1.1",
     "node-qiniu": "^6.2.0",
-    "yargs": "^15.4.1"
+    "yargs": "^16.2.0"
   }
 }
