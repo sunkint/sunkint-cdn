@@ -3,7 +3,7 @@ const yargs = require('yargs').option('r', {
   alias: 'random',
   default: true,
   describe: 'Use random file names',
-  type: 'boolean'
+  type: 'boolean',
 });
 const fs = require('fs');
 const path = require('path');
@@ -15,12 +15,12 @@ const fileList = [];
 
 const useRandomName = yargs.argv.random;
 
-files.forEach(file => {
+files.forEach((file) => {
   const filePath = path.resolve(process.cwd(), file);
   if (fs.existsSync(filePath)) {
     fileList.push({
       fileName: path.basename(file),
-      filePath
+      filePath,
     });
   }
 });
@@ -39,7 +39,7 @@ fileList.forEach(({ filePath }) => {
 console.log('');
 
 const upload = new Upload({
-  random: useRandomName
+  random: useRandomName,
 });
 
 upload
